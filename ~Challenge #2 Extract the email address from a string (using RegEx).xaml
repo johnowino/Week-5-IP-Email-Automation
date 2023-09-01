@@ -86,6 +86,7 @@
       <AssemblyReference>netstandard</AssemblyReference>
       <AssemblyReference>CredentialManagement</AssemblyReference>
       <AssemblyReference>UiPath.Credentials.Activities</AssemblyReference>
+      <AssemblyReference>GlobalVariablesT1PNoYwrqg</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <Sequence DisplayName="Challenge__2_Extract_the_email_address_from_a_string__using_RegEx_" sap:VirtualizedContainerService.HintSize="572,1600" sap2010:WorkflowViewState.IdRef="Sequence_1">
@@ -93,7 +94,7 @@
       <Variable x:TypeArguments="x:String" Name="Email" />
       <Variable x:TypeArguments="x:String" Name="Collection">
         <Variable.Default>
-          <Literal x:TypeArguments="x:String">The email address in jowino@safaricom.co.ke and is part of the engagement package. Also included is lydiahowino@gmail.com. You may also include lydiahowino@hotmail.com</Literal>
+          <Literal x:TypeArguments="x:String">The email address in jowino@safaricom.co.ke and is part of the engagement package. Also included is lydiahowino@gmail.com. You may also include lydiahowino@hotmail.com and jolatoly@gmail.com and johnowino2000@gmail.com</Literal>
         </Variable.Default>
       </Variable>
       <Variable x:TypeArguments="scg:IEnumerable(str:Match)" Name="EmailExtracted" />
