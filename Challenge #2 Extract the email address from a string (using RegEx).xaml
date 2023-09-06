@@ -93,7 +93,7 @@
       <Variable x:TypeArguments="x:String" Name="Email" />
       <Variable x:TypeArguments="x:String" Name="Collection">
         <Variable.Default>
-          <Literal x:TypeArguments="x:String">The email address in jowino@safaricom.co.ke and is part of the engagement package. Also included is lydiahowino@gmail.com. You may also include lydiahowino@hotmail.com</Literal>
+          <Literal x:TypeArguments="x:String">The email address in jowino@safaricom.co.ke and is part of the engagement package. Also included is lydiahowino@gmail.com. You may also include lydiahowino@hotmail.com and jolatoly@gmail.com and johnowino2000@gmail.com</Literal>
         </Variable.Default>
       </Variable>
       <Variable x:TypeArguments="scg:IEnumerable(str:Match)" Name="EmailExtracted" />
