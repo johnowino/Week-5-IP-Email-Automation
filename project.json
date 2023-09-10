@@ -2,7 +2,7 @@
   "name": "Week-5-IP-Email-Automation",
   "projectId": "7e693e48-0f58-4992-abc1-2f03061c531f",
   "description": "Blank Process",
-  "main": "Main.xaml",
+  "main": "Challenge#1 - Extract Email without Regex.xaml",
   "dependencies": {
     "UiPath.Credentials.Activities": "[2.0.0]",
     "UiPath.Excel.Activities": "[2.22.0-preview]",
@@ -50,8 +50,8 @@
   "expressionLanguage": "VisualBasic",
   "entryPoints": [
     {
-      "filePath": "Main.xaml",
-      "uniqueId": "c22d412c-e268-4b67-a415-7efd185c6c2e",
+      "filePath": "Challenge#1 - Extract Email without Regex.xaml",
+      "uniqueId": "e34d49c7-13e5-4df9-8739-5f9e992b364f",
       "input": [],
       "output": []
     }
