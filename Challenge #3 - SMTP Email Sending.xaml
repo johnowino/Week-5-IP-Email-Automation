@@ -5,7 +5,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>590,1218</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>590,1082</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Challenge__3___SMTP_Email_Sending_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -93,26 +93,23 @@
       <AssemblyReference>System.Private.Uri</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap:VirtualizedContainerService.HintSize="558,1153" sap2010:WorkflowViewState.IdRef="Sequence_5">
+  <Sequence sap:VirtualizedContainerService.HintSize="558,1017" sap2010:WorkflowViewState.IdRef="Sequence_5">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <x:Boolean x:Key="IsPinned">False</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="Challenge__3___SMTP_Email_Sending" sap:VirtualizedContainerService.HintSize="496,1042" sap2010:WorkflowViewState.IdRef="Sequence_6">
+    <Sequence sap2010:Annotation.AnnotationText="Activity for sending email using SMTP" DisplayName="Challenge__3___SMTP_Email_Sending" sap:VirtualizedContainerService.HintSize="496,906" sap2010:WorkflowViewState.IdRef="Sequence_6">
       <Sequence.Variables>
-        <Variable x:TypeArguments="x:String" Name="UserName">
-          <Variable.Default>
-            <Literal x:TypeArguments="x:String">johnowino2000@gmail.com</Literal>
-          </Variable.Default>
-        </Variable>
+        <Variable x:TypeArguments="x:String" Default="johnowino2000@gmail.com" Name="UserName" />
         <Variable x:TypeArguments="ss:SecureString" Name="Password" />
         <Variable x:TypeArguments="x:String" Name="FinalEmail" />
       </Sequence.Variables>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <p:GetSecureCredential sap2010:Annotation.AnnotationText="This gets credentials stored on windows credential manager to allow use of application password" CredentialType="Generic" DisplayName="Get Secure Credentials" sap:VirtualizedContainerService.HintSize="434,122" sap2010:WorkflowViewState.IdRef="GetSecureCredential_1" Password="[Password]" PersistanceType="Enterprise" Target="Gmail_JO_Cred" Username="[UserName]">
@@ -122,8 +119,25 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </p:GetSecureCredential>
-      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,141" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;This is the sending email: &quot;+UserName]" />
-      <Assign sap2010:Annotation.AnnotationText="Pass data from argument to variable" sap:VirtualizedContainerService.HintSize="434,113" sap2010:WorkflowViewState.IdRef="Assign_3">
+      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="434,52" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+        <ui:CommentOut.Body>
+          <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,252" sap2010:WorkflowViewState.IdRef="Sequence_7">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,141" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;This is the sending email: &quot;+UserName]" />
+          </Sequence>
+        </ui:CommentOut.Body>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:CommentOut>
+      <Assign sap2010:Annotation.AnnotationText="Pass data from argument (in_Email) to variable (FinalEmail). The in_Email data is fed from Challenge 1 and Challenge 2 sequences" sap:VirtualizedContainerService.HintSize="434,124" sap2010:WorkflowViewState.IdRef="Assign_3">
         <Assign.To>
           <OutArgument x:TypeArguments="x:String">[FinalEmail]</OutArgument>
         </Assign.To>
@@ -136,8 +150,25 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </Assign>
-      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,141" sap2010:WorkflowViewState.IdRef="LogMessage_3" Message="[&quot;This is the final email to be sent out: &quot;+FinalEmail]" />
-      <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" ContinueOnError="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" Password="{x:Null}" Result="{x:Null}" UseOAuth="{x:Null}" sap2010:Annotation.AnnotationText="Use to send email from both challenge 1 &amp; 2." Body="This is to confirm that your email address was extracted successful. It gives an indication that the automation is working as designed. &lt;br/&gt; &lt;br/&gt;&#xD;&#xA;You may proceed and delete this email. Have a great day ahead &lt;br/&gt; &lt;br/&gt;&#xD;&#xA;Regards, &lt;br/&gt;&#xD;&#xA;&lt;br/&gt;&#xD;&#xA;John Owino&lt;br&gt;&#xD;&#xA;Mobile: 0722-881463" DisplayName="Send SMTP Mail Message" Email="[UserName]" EnableSSL="True" sap:VirtualizedContainerService.HintSize="434,254" sap2010:WorkflowViewState.IdRef="SendMail_1" IgnoreCRL="False" IsBodyHtml="True" Port="587" ReplyTo="[UserName]" SecureConnection="StartTls" SecurePassword="[Password]" Server="smtp.gmail.com" Subject="Testing Email Automation - Email Extraction and Sending" TimeoutMS="60000" To="[FinalEmail]">
+      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="434,52" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+        <ui:CommentOut.Body>
+          <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,252" sap2010:WorkflowViewState.IdRef="Sequence_8">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,141" sap2010:WorkflowViewState.IdRef="LogMessage_3" Message="[&quot;This is the final email to be sent out: &quot;+FinalEmail]" />
+          </Sequence>
+        </ui:CommentOut.Body>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:CommentOut>
+      <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" ContinueOnError="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" Password="{x:Null}" Result="{x:Null}" UseOAuth="{x:Null}" sap2010:Annotation.AnnotationText="Use to send email from both challenge 1 &amp; 2." Body="This is to confirm that your email address was extracted successful. It gives an indication that the automation is working as designed. &lt;br/&gt; &lt;br/&gt;&#xA;You may proceed and delete this email. Have a great day ahead &lt;br/&gt; &lt;br/&gt;&#xA;Regards, &lt;br/&gt;&#xA;&lt;br/&gt;&#xA;John Owino&lt;br&gt;&#xA;Mobile: 0722-881463" DisplayName="Send SMTP Mail Message" Email="[UserName]" EnableSSL="True" sap:VirtualizedContainerService.HintSize="434,254" sap2010:WorkflowViewState.IdRef="SendMail_1" IgnoreCRL="False" IsBodyHtml="True" Port="587" ReplyTo="[UserName]" SecureConnection="StartTls" SecurePassword="[Password]" Server="smtp.gmail.com" Subject="Testing Email Automation - Email Extraction and Sending" TimeoutMS="60000" To="[FinalEmail]">
         <ui:SendMail.Files>
           <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4" />
         </ui:SendMail.Files>
