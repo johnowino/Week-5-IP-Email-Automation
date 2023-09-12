@@ -5,7 +5,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>590,1135</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>590,1218</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Challenge__3___SMTP_Email_Sending_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -93,16 +93,20 @@
       <AssemblyReference>System.Private.Uri</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap:VirtualizedContainerService.HintSize="558,1070" sap2010:WorkflowViewState.IdRef="Sequence_5">
+  <Sequence sap:VirtualizedContainerService.HintSize="558,1153" sap2010:WorkflowViewState.IdRef="Sequence_5">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <x:Boolean x:Key="IsPinned">False</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="Challenge__3___SMTP_Email_Sending" sap:VirtualizedContainerService.HintSize="496,971" sap2010:WorkflowViewState.IdRef="Sequence_6">
+    <Sequence DisplayName="Challenge__3___SMTP_Email_Sending" sap:VirtualizedContainerService.HintSize="496,1042" sap2010:WorkflowViewState.IdRef="Sequence_6">
       <Sequence.Variables>
-        <Variable x:TypeArguments="x:String" Name="UserName" />
+        <Variable x:TypeArguments="x:String" Name="UserName">
+          <Variable.Default>
+            <Literal x:TypeArguments="x:String">johnowino2000@gmail.com</Literal>
+          </Variable.Default>
+        </Variable>
         <Variable x:TypeArguments="ss:SecureString" Name="Password" />
         <Variable x:TypeArguments="x:String" Name="FinalEmail" />
       </Sequence.Variables>
@@ -132,8 +136,8 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </Assign>
-      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,141" sap2010:WorkflowViewState.IdRef="LogMessage_3" Message="[&quot;This is the final email to be sent out - &quot;+FinalEmail]" />
-      <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" ContinueOnError="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" Password="{x:Null}" Result="{x:Null}" UseOAuth="{x:Null}" sap2010:Annotation.AnnotationText="Use to send email from both challenge 1 &amp; 2." Body="This is to confirm that your email address was extracted successful" DisplayName="Send SMTP Mail Message" Email="[UserName]" EnableSSL="True" sap:VirtualizedContainerService.HintSize="434,183" sap2010:WorkflowViewState.IdRef="SendMail_1" IgnoreCRL="False" IsBodyHtml="True" Port="587" ReplyTo="[UserName]" SecureConnection="StartTls" SecurePassword="[Password]" Server="smtp.gmail.com" Subject="Testing Email Automation" TimeoutMS="60000" To="[FinalEmail]">
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,141" sap2010:WorkflowViewState.IdRef="LogMessage_3" Message="[&quot;This is the final email to be sent out: &quot;+FinalEmail]" />
+      <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" ContinueOnError="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" Password="{x:Null}" Result="{x:Null}" UseOAuth="{x:Null}" sap2010:Annotation.AnnotationText="Use to send email from both challenge 1 &amp; 2." Body="This is to confirm that your email address was extracted successful. It gives an indication that the automation is working as designed. &lt;br/&gt; &lt;br/&gt;&#xD;&#xA;You may proceed and delete this email. Have a great day ahead &lt;br/&gt; &lt;br/&gt;&#xD;&#xA;Regards, &lt;br/&gt;&#xD;&#xA;&lt;br/&gt;&#xD;&#xA;John Owino&lt;br&gt;&#xD;&#xA;Mobile: 0722-881463" DisplayName="Send SMTP Mail Message" Email="[UserName]" EnableSSL="True" sap:VirtualizedContainerService.HintSize="434,254" sap2010:WorkflowViewState.IdRef="SendMail_1" IgnoreCRL="False" IsBodyHtml="True" Port="587" ReplyTo="[UserName]" SecureConnection="StartTls" SecurePassword="[Password]" Server="smtp.gmail.com" Subject="Testing Email Automation - Email Extraction and Sending" TimeoutMS="60000" To="[FinalEmail]">
         <ui:SendMail.Files>
           <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4" />
         </ui:SendMail.Files>
